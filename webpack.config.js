@@ -5,12 +5,16 @@ module.exports = {
     mode: 'development',
     //Passamos o arquivo principal da aplicação "./src/index.jsx"
     entry: path.resolve(__dirname, 'src', 'index.jsx'),
+    devtool: 'eval-source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     resolve: {
         extensions: ['.js', '.jsx']
+    },
+    devServer: {
+        static: path.resolve(__dirname, 'public'),
     },
     plugins: [
         new HtmlWebpackPlugin({
